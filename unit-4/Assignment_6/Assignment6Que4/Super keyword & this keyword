@@ -1,0 +1,103 @@
+
+super keyword in Java:
+
+The super keyword in Java is a reference variable that is used to refer to immediate parent class object.
+Whenever you create the instance of a subclass, an instance of parent class is created implicitly which is referred by the super reference variable.
+
+Usage of Java super Keyword
+1. super can be used to refer to the immediate parent class instance variable.
+2. super can be used to invoke the immediate parent class method.
+3. super() can be used to invoke immediate parent class constructor.
+
+Example: invoking the parent class constructor
+The first line in each constructor is call to the super constructor super();
+But it is there by default, meaning you don't have to write it.
+
+class Animal{
+Animal(){
+System.out.println("animal is created");
+}
+}
+class Dog extends Animal{
+Dog(){
+super();
+System.out.println("dog is created");
+}
+}
+class Main{
+public static void main(String args[]){
+Dog d=new Dog();
+}
+
+
+‘this’ keyword:
+
+'this' keyword points to the current object inside the method or constructor.
+Whenever it is required to point an object from a method which is under execution because of that object then we use 'this' keyword.
+
+Following 3 main job of this keyword:
+
+1. Points to the current class obj.
+
+class A{
+	void show(){
+		System.out.println(this);
+	}
+	public static void main(String[] args){
+	
+	A r = new A();
+	System.out.println(r);
+	r.show();
+	}
+}
+Here both give same address of class of unique refrance no.
+
+2. Differentiate between local and instance variable.
+Whenever the name of instance and local variables both are same then our runtime environment JVM gets confused that which one is local variable  
+and which one is instance variable to avoid this problem we should use this keyword.
+
+class A{
+	int a;//instance variable
+	
+	A(int a)//inside constructor local variable
+	{ 
+	
+		a = a;  //o/p 0;  JVM confuse and given default value
+		 
+		this.a = a  o/p 100; 
+	}
+	void show(){
+		System.out.println(a);
+	}
+	public static void main(String[] args){
+	
+		A r = new A(100);
+		r.show();
+	}
+}
+
+
+3. Calling a constructor of a class from another constructor of the same class.
+
+Example
+
+class A{
+	
+	A(){ 
+		
+		this(10)//call parametrized constructor
+	}
+	
+	A(int a)//inside constructor local variable
+	{ 
+		System.out.println(a); 
+		this();  //call dedfault constructor
+	}
+
+	public static void main(String[] args){
+	
+		A r = new A(100);
+	}
+}
+
+

@@ -1,0 +1,5 @@
+How will you fix deadlock in Java show with examples?
+
+1.We can add dead lock by adding synchronized keyword in method.
+
+2.Once we remove any synchronized from the method there will be no deadlock.

@@ -1,0 +1,33 @@
+
+Question 3:
+Explain about String, StringBuffer, and StringBuilder class with an example. Explain also
+about toString() method in java.
+
+String:
+It is immutable class. In Java, string is basically an object that represents combination of any char or no etc, we write string in"". 
+Example:
+String s="Krti1234"; 
+
+StringBuffer : It is mutable , and takes more time to implement.Allocates a new string from the string in StringBuffer
+StringBuffer is synchronized it is thread safe so two thread can't call the methods of StringBuffer simultaneously.
+example:
+StringBuffer sbuffer = new StringBuffer("Krutika");
+String k = new String(sbuffer); //Krutika
+
+
+StringBuilder:–  It is mutable , and takes more time to implement.Allocates a new string from the string in StringBuilder
+StringBuilder is non-synchronized, it is not thread safe so two threads can call the methods of StringBuilder simultaneously.
+example:
+StringBuilder sbuilder = new StringBuilder("Krutika");
+String s = new String(sbuilder); //Krutika
+
+
+toString() method
+This method returns the String representation of the object with any parameters passed into it;
+If you print any object, Java compiler internally invokes the toString() method on the object. 
+So overriding the toString() method, returns the desired output  implementation.
+
+Example  
+public String toString(){ 
+  return name+" "+age+" "+gender;  
+ }  

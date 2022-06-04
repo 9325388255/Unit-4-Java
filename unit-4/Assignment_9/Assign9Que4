@@ -1,0 +1,62 @@
+Question) What is the difference between the Checked and Unchecked exceptions explain it with an example? 
+How to create a User-defined unchecked exception class.
+
+
+Checked and unchecked exceptions both are types of logical errors which may happen at runtime. 
+For all logical errors, JVM creates an Exception object during the execution.
+
+Unchecked exceptions
+--------------------
+1.The classes that inherit the RuntimeException are known as unchecked exceptions
+2.Unchecked exceptions are those exceptions even if not handled using try-catch, the Java compiler does not give any compilation error. 
+3.It allows the file to compile and if error happens JVM creates the object and terminates program abnormally. 
+4.Unchecked exceptions are direct child classes for RuntimeException class.
+For example, ArithmeticException, NullPointerException,ArrayIndexOutOfBoundsException, etc.
+
+For example/
+
+int x = 10/0;
+
+This will raise an ArithmeticException object but java compiler won't force you to handle it before the compilation and allows you to compile the program.
+
+===============================================================================================================================================
+Checked exceptions
+--------------------
+1.The classes that directly inherit the Throwable class except RuntimeException and Error are known as checked exceptions.
+2.Checked exceptions are those for which the Java compiler gives a compilation error.
+3.and forces the developer to handle the exception before the compilation. 
+4.Java compiler does not compile the file if these exceptions are not handled. 
+5.Checked exceptions are direct child classes of Exception class.
+For example, IOException, SQLException, etc
+For example/
+
+try{
+	Class.forName("Student");
+}
+catch(ClassNotFoundException cnfe){
+	System.out.println(cnfe.getMessage());
+}
+
+Here we are loading a class in the context area of our RAM, and there might be a possibility that class may not exists and it may not get loaded.
+ This is a checked exception, and if the logic is not wrapped inside a try-catch block the Java compiler gives a compiler error.
+
+===============================================================================================================================================
+
+To create a user-defined unchecked exception we need to extend RuntimeException class and establish IS-A relationship with RuntimeException class.
+
+For example/
+
+public class AgeNotVerifiedException extends RuntimeException
+{
+	public AgeNotVerifiedException()
+	{
+		//
+	}
+
+	public AgeNotVerifiedException(String message)
+	{
+		super(message);
+	}
+}
+
+================================================================================================================================================

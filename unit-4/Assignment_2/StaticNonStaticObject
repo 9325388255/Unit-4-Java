@@ -1,0 +1,14 @@
+
+DIFFERENCE BETWEEN STATIC AND NOT-STATIC
+
+Static Members			    															Non-Static Members
+1.Belongs to class 																		1.Belong to Object
+2.Can be accessed using ClassName.memberName 											2.Can be accessed using objectName.memberName
+3.Static variable initializes with default values at the time of class loading.         3.Non-static variable initializes with default values at the time of object creation
+4.All objects of a class share a single copy of static variables                        4.Each object has one local copy of the non-static variables.
+
+Example :                                                                               Example :
+For a Banking Application:                                                              For a Banking Application:
+Static variables:                     													Non-static Variables: 
+bankName, branchName, ifscCode, phone, bankAddress                                      (each customer’s) accountNumber, name, phone, address
+

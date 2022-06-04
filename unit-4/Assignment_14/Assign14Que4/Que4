@@ -1,0 +1,29 @@
+Que: Explain wait(), notify(),notifyAll() how they are used for inter thread communication.
+========================================================================================================================
+1.we can call wait(), notify(),notifyAll() only in the synchronized block or synchronized methods.
+otherwise we will get a runtime exception.
+2.To call wait() or notify() method on any object we must have that particular object lock otherwise we will get a
+runtime exception called IllegalMonitorStateException.
+
+------------------------------------------------------------------------------------------------------------------------
+wait()
+
+1.Whenever we need to suspend a synchronized thread unconditionally then we use wait() method.
+2.In the inter-thread communication the thread which require updation it has to call wait() method.
+3.Once a thread calls wait() method on any object, first it releases the lock immediately of that particular object and
+then it enters into the waiting state immediately.
+4.Wait method belongs from Object class because "a thread" can call these methods on any java object.
+
+
+========================================================================================================================
+notify()
+
+1.Whenever we need to resume a suspended(waiting) thread then we use notify() method.
+2.The thread which performing updation it will call notify() method, so that waiting thread will gets the notification
+and it continues its execution with those updation.
+3.Once a thread calls notify() method on any object it also releases the lock of that object but not immediately.
+4.notify method belongs from Object class because "a thread" can call these methods on any java object.
+========================================================================================================================
+notifyAll()
+
+1.notifyAll method belongs from Object class because "a thread" can call these methods on any java object.

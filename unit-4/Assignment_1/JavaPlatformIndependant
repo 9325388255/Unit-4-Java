@@ -1,0 +1,11 @@
+Java is an object oriented general purpose programming language and computing platform for developing application. 
+Java can be download freely and can also be accessed freely.
+Java is platform-independent because it uses a virtual machine.
+Java compiler produces a unique type of code called bytecode. 
+The Java programming language and all APIs are compiled into bytecodes. 
+Bytecodes are effectively platform-independent. 
+This bytecode is sent to Java virtual machine (JVM) which resides in the RAM of any operating system. 
+The virtual machine takes care of the differences between the bytecodes for the different platforms.
+JVM recognizes the platform it is on and converts the bytecodes into native machine code. Hence java is called platform independent language.
+The run-time requirements for Java are very small.
+The Java virtual machine takes care of all hardware-related issues, so that no code has to be compiled for different hardware.
